@@ -58,7 +58,7 @@ def main():
         overall_best_plant_name_mse = ""
         overall_best_plant_name_ssim = ""
 
-        with open("data/PlantNet300K/plant_names.json", 'r') as file:
+        with open('data/PlantNet300K/plant_names.json', 'r') as file:
             plant_names = json.load(file)
 
         for directory_index, plant_name in plant_names.items():
@@ -104,4 +104,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
