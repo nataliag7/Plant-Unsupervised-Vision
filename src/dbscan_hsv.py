@@ -67,13 +67,13 @@ def process_directory(directory_path, plant_name, target_size):
 
 def main():
     try:
-        with open('path/to/file', 'r') as file:
+        with open('data/PlantNet300K/plant_names.json', 'r') as file:
             plant_names = json.load(file)
     except Exception as e:
         print(f"Failed to load plant names JSON: {e}")
         return
 
-    base_directory_path = "path/to/file"
+    base_directory_path = "data/PlantNet300K/train"
     target_size = (500, 500)
 
     all_features = defaultdict(list)
@@ -101,7 +101,7 @@ def main():
             print("No images found in any of the directories.")
             return
 
-        user_image_path = "path/to/file"
+        user_image_path = "data/PlantNet300K/test/example_leaf.jpg"
         user_image = cv2.imread(user_image_path)
         if user_image is None:
             print(f"Failed to load user image: {user_image_path}")
@@ -160,3 +160,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
