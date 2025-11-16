@@ -115,6 +115,8 @@ The summaries below focus mainly on the **first image**, for which the methods b
 
 *A bright orange **Calendula officinalis** flower on a darker background.*
 
+![](./assets/Calendula_officinalis.png)
+
 #### MSE (pixel space)
 
 * **Most similar plant image**: *Calendula officinalis*
@@ -177,6 +179,10 @@ Despite being more computationally complex than MSE, **SSIM does not provide bet
 
 ### Hierarchical Clustering (HCA) in HSV color space
 
+![](./assets/Calendula_officinalis_hca1.png)
+
+![Dendrogram for the group of plants surrounding the examined image at a selected level of detail.](./assets/Calendula_officinalis_hca2.png)
+
 **Works well when the plant:**
 
 * clearly stands out from the background,
@@ -206,13 +212,7 @@ Overall, this method produced results **closest to human perception** among the 
   but the **top four matches** are flowers from the *Calendula* and *Tagetes* genera, which share very similar floral morphology.
 * The **fifth match** differs in shape but appears because of a similar **color distribution**, illustrating HSV’s focus on color rather than structure.
 
-**For the second test image:**
-
-* The most similar plant belongs to the **same genus (*Ophrys*)**, which means the method again captures strong visual similarity.
-
-**For the third test image** (few details, low contrast, low diversity):
-
-* The method does **not** correctly identify similar species, showing its limitations in such cases.
+![](./assets/Calendula_officinalis_dbscan_hsv.png)
 
 **Conclusion**
 
@@ -239,6 +239,8 @@ As a result, the clustering does **not reflect intuitive botanical similarity**.
 * SIFT emphasizes **shapes and textures**; plant images often lack strong, unique structural features beyond general leaf/flower outlines.
 
 Background structures (soil, bark, textured backgrounds) may be detected as keypoints:
+
+![](./assets/Calendula_officinalis_dbscan_sift.png)
 
 * In some examples, **soil or background** is treated as the key region, and images with similar backgrounds are ranked as most similar, even if the plants themselves are different.
 
